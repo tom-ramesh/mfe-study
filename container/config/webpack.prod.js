@@ -7,7 +7,10 @@ const domain = process.env.PRODUCTION_DOMAIN;
 
 const prodConfig = {
   mode: "production",
-  output: { filename: "[name].[contenthash].js" },
+  output: {
+    filename: "[name].[contenthash].js",
+    publicPath: "/container/latest/", //path in s3 bucket for the build files
+  },
   plugins: [
     new ModuleFederationPlugin({
       name: "container",
