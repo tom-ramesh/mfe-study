@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { createMemoryHistory, createBrowserHistory } from "history";
 
+//arguments to receive from container app
 const mount = (el, { onNavigate, defaultHistory, initialPath, onSignIn }) => {
   const history = defaultHistory
     ? defaultHistory
