@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 //importing from marketing app from remote
-import { mount } from "marketing/MarketingApp";
+import { mount } from "auth/AuthApp";
 import { useHistory } from "react-router-dom";
 
-export default function MarketingApp() {
+export default function AuthApp({ onSignIn }) {
   const ref = useRef(null);
   const history = useHistory();
 
@@ -14,6 +14,7 @@ export default function MarketingApp() {
         const { pathname } = history.location;
         if (pathname !== nextPathname) history.push(nextPathname);
       },
+      onSignIn,
     });
 
     history.listen(onParentNavigate);
